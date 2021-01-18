@@ -2,12 +2,15 @@ package spa.lyh.cn.globaldemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import spa.lyh.cn.globaldemo.local.LocalActivity;
+
+public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button local_click;
 
     @Override
@@ -15,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        loadData();
+        //loadData();
     }
 
     private void initView(){
@@ -31,6 +34,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.local_click:
+                Intent intent = new Intent(MainActivity.this, LocalActivity.class);
+                startActivity(intent);
+                break;
+        }
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadData();
     }
 }

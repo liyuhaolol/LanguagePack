@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">GlobalDemo</string>
     <string name="enter">enter local language</string>
+    <string name="follow">follow system</string>
 </resources>

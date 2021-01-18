@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">国际化范例</string>
     <string name="enter">进入本地化范例</string>
+    <string name="zh_cn" translatable="false">简体中文</string>
+    <string name="en" translatable="false">English</string>
+    <string name="follow">跟随系统</string>
 </resources>
