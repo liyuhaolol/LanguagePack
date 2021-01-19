@@ -7,6 +7,7 @@ import android.content.res.Resources;
 
 import com.hjq.language.MultiLanguages;
 
+
 import java.util.Locale;
 
 public class LanguagesPack {
@@ -100,4 +101,13 @@ public class LanguagesPack {
     public static void setSharedPreferencesName(String name) {
         MultiLanguages.setSharedPreferencesName(name);
     }
+
+
+    /**
+     * 设置保存的 SharedPreferences 文件名
+     */
+    public static void AAA(String name) {
+        MultiLanguages.setSharedPreferencesName(name);
+    }
+
 }

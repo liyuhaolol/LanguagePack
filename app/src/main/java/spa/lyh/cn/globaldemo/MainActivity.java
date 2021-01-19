@@ -1,6 +1,5 @@
 package spa.lyh.cn.globaldemo;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,9 +11,10 @@ import android.widget.Button;
 import java.util.Locale;
 
 import spa.lyh.cn.globaldemo.local.LocalActivity;
+import spa.lyh.cn.languagepack.LanguageReceiver;
 import spa.lyh.cn.languagepack.LanguagesPack;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener, LanguageReceiver.Message {
     private Button local_click;
 
     @Override
@@ -22,16 +22,19 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        //loadData();
+        loadData();
     }
 
     private void initView(){
         local_click = findViewById(R.id.local_click);
         local_click.setOnClickListener(this);
+        //receiver = new LanguageReceiver(this);
+        //LanguageReceiver.register(this,receiver);
     }
 
     private void loadData(){
-        //String content = getString(R.string.enter);
+        Locale locale = LanguagesPack.getAppLanguage(this);
+        Log.e("qwer",locale.toLanguageTag());
         String content = LanguagesPack.getString(this,R.string.enter);
         Log.e("qwer","内容为："+content);
         local_click.setText(content);
@@ -48,10 +51,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        Locale locale = LanguagesPack.getAppLanguage(this);
-        Log.e("qwer",locale.toLanguageTag());
+    public void onLanguageChange() {
         loadData();
     }
 }
