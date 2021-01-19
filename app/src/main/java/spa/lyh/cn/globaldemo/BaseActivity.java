@@ -4,7 +4,8 @@ import android.content.Context;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.hjq.language.MultiLanguages;
+import spa.lyh.cn.languagepack.LanguagesPack;
+
 
 public class BaseActivity extends AppCompatActivity {
 
@@ -12,6 +13,6 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         // 国际化适配（绑定语种）
-        super.attachBaseContext(MultiLanguages.attach(newBase));
+        super.attachBaseContext(LanguagesPack.attach(newBase));
     }
 }

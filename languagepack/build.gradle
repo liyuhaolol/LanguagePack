@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
 }
 
 android {
@@ -7,12 +7,12 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "spa.lyh.cn.globaldemo"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -31,6 +31,5 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation project(':languagepack')
+    implementation 'com.hjq:language:5.0'
 }

@@ -6,14 +6,12 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.hjq.language.MultiLanguages;
 
 import java.util.Locale;
 
 import spa.lyh.cn.globaldemo.BaseActivity;
 import spa.lyh.cn.globaldemo.R;
+import spa.lyh.cn.languagepack.LanguagesPack;
 
 public class LocalActivity extends BaseActivity implements View.OnClickListener {
     Button system,zh_cn,en;
@@ -47,13 +45,13 @@ public class LocalActivity extends BaseActivity implements View.OnClickListener 
         boolean restart;
         switch (v.getId()){
             case R.id.system:
-                restart = MultiLanguages.setSystemLanguage(this);
+                restart = LanguagesPack.setSystemLanguage(this);
                 break;
             case R.id.zh_cn:
-                restart = MultiLanguages.setAppLanguage(this, Locale.CHINA);
+                restart = LanguagesPack.setAppLanguage(this, Locale.CHINA);
                 break;
             case R.id.en:
-                restart = MultiLanguages.setAppLanguage(this, Locale.ENGLISH);
+                restart = LanguagesPack.setAppLanguage(this, Locale.ENGLISH);
                 break;
             default:
                 restart = false;

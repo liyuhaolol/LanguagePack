@@ -8,11 +8,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.hjq.language.MultiLanguages;
 
 import java.util.Locale;
 
 import spa.lyh.cn.globaldemo.local.LocalActivity;
+import spa.lyh.cn.languagepack.LanguagesPack;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button local_click;
@@ -32,7 +32,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private void loadData(){
         //String content = getString(R.string.enter);
-        String content = MultiLanguages.getLanguageString(this,MultiLanguages.getAppLanguage(this),R.string.enter);
+        String content = LanguagesPack.getString(this,R.string.enter);
         Log.e("qwer","内容为："+content);
         local_click.setText(content);
     }
@@ -50,7 +50,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     protected void onResume() {
         super.onResume();
-        Locale locale = MultiLanguages.getAppLanguage(this);
+        Locale locale = LanguagesPack.getAppLanguage(this);
         Log.e("qwer",locale.toLanguageTag());
         loadData();
     }
