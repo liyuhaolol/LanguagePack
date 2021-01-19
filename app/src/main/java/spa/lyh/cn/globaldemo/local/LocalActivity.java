@@ -60,10 +60,10 @@ public class LocalActivity extends BaseActivity implements View.OnClickListener 
                 break;
         }
         if (restart) {
-            Log.e("qwer","需要重启");
-            recreate();
+            Log.e("qwer","需要切换");
+
         }else {
-            Log.e("qwer","不需要重启");
+            Log.e("qwer","语言不需要切换");
         }
     }
 }
