@@ -2,7 +2,9 @@ package spa.lyh.cn.languagepack;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
+import android.util.Log;
 
 
 import com.hjq.language.MultiLanguages;
@@ -36,7 +38,13 @@ public class LanguagesPack {
      * 设置 App 的语种
      */
     public static boolean setAppLanguage(Context context, Locale locale) {
-        return MultiLanguages.setAppLanguage(context,locale);
+        Locale oldLocale = getAppLanguage(context);
+        boolean result = MultiLanguages.setAppLanguage(context,locale);
+        Locale newLocale = getAppLanguage(context);
+        if (result || !equalsLanguage(oldLocale,newLocale)){
+            sendLanguageBroadcast(context);
+        }
+        return result;
     }
 
     /**
@@ -50,7 +58,13 @@ public class LanguagesPack {
      * 将 App 语种设置为系统语种
      */
     public static boolean setSystemLanguage(Context context) {
-        return MultiLanguages.setSystemLanguage(context);
+        Locale oldLocale = getAppLanguage(context);
+        boolean result = MultiLanguages.setSystemLanguage(context);
+        Locale newLocale = getAppLanguage(context);
+        if (result || !equalsLanguage(oldLocale,newLocale)){
+            sendLanguageBroadcast(context);
+        }
+        return result;
     }
 
     /**
@@ -104,10 +118,12 @@ public class LanguagesPack {
 
 
     /**
-     * 设置保存的 SharedPreferences 文件名
+     * 调用此方法会触发广播回调
      */
-    public static void AAA(String name) {
-        MultiLanguages.setSharedPreferencesName(name);
+    public static void sendLanguageBroadcast(Context context){
+        Intent intent=new Intent();
+        intent.setAction(context.getPackageName());
+        context.sendBroadcast(intent);
     }
 
 }

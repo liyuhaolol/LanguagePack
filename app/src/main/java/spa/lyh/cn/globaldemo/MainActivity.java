@@ -6,7 +6,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
+
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 
 import java.util.Locale;
 
@@ -16,6 +20,7 @@ import spa.lyh.cn.languagepack.LanguagesPack;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener, LanguageReceiver.Message {
     private Button local_click;
+    private ImageView lan_icon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +33,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     private void initView(){
         local_click = findViewById(R.id.local_click);
         local_click.setOnClickListener(this);
-        //receiver = new LanguageReceiver(this);
-        //LanguageReceiver.register(this,receiver);
+        receiver = new LanguageReceiver(this);
+        lan_icon = findViewById(R.id.local_img);
+        LanguageReceiver.register(this,receiver);
     }
 
     private void loadData(){
-        Locale locale = LanguagesPack.getAppLanguage(this);
-        Log.e("qwer",locale.toLanguageTag());
-        String content = LanguagesPack.getString(this,R.string.enter);
-        Log.e("qwer","内容为："+content);
-        local_click.setText(content);
+        actionBar.setTitle(LanguagesPack.getString(this,R.string.app_name));
+        lan_icon.setBackground(ResourcesCompat.getDrawable(LanguagesPack.getResources(this), R.drawable.lan_icon,null));
+        local_click.setText(LanguagesPack.getString(this,R.string.enter));
     }
 
     @Override

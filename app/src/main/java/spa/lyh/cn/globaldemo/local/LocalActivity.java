@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -11,16 +12,16 @@ import java.util.Locale;
 
 import spa.lyh.cn.globaldemo.BaseActivity;
 import spa.lyh.cn.globaldemo.R;
+import spa.lyh.cn.languagepack.LanguageReceiver;
 import spa.lyh.cn.languagepack.LanguagesPack;
 
-public class LocalActivity extends BaseActivity implements View.OnClickListener {
+public class LocalActivity extends BaseActivity implements View.OnClickListener, LanguageReceiver.Message {
     Button system,zh_cn,en;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_local);
-        Log.e("qwer","启动页面");
         initView();
         loadData();
     }
@@ -32,36 +33,33 @@ public class LocalActivity extends BaseActivity implements View.OnClickListener 
         zh_cn.setOnClickListener(this);
         en = findViewById(R.id.en);
         en.setOnClickListener(this);
+        receiver = new LanguageReceiver(this);
+        LanguageReceiver.register(this,receiver);
     }
 
     private void loadData(){
-        system.setText(R.string.follow);
+        actionBar.setTitle(LanguagesPack.getString(this,R.string.app_name));
+        system.setText(LanguagesPack.getString(this,R.string.follow));
     }
 
 
     @Override
     public void onClick(View v) {
-        // 是否需要重启
-        boolean restart;
         switch (v.getId()){
             case R.id.system:
-                restart = LanguagesPack.setSystemLanguage(this);
+                LanguagesPack.setSystemLanguage(LocalActivity.this);
                 break;
             case R.id.zh_cn:
-                restart = LanguagesPack.setAppLanguage(this, Locale.CHINA);
+                LanguagesPack.setAppLanguage(LocalActivity.this, Locale.CHINA);
                 break;
             case R.id.en:
-                restart = LanguagesPack.setAppLanguage(this, Locale.ENGLISH);
-                break;
-            default:
-                restart = false;
+                LanguagesPack.setAppLanguage(LocalActivity.this, Locale.ENGLISH);
                 break;
         }
-        if (restart) {
-            Log.e("qwer","需要切换");
+    }
 
-        }else {
-            Log.e("qwer","语言不需要切换");
-        }
+    @Override
+    public void onLanguageChange() {
+        loadData();
     }
 }

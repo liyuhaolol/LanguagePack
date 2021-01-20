@@ -10,7 +10,8 @@
         <Button
             android:id="@+id/system"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"/>
         <Button
             android:id="@+id/zh_cn"
             android:layout_width="200dp"
@@ -20,7 +21,8 @@
             android:id="@+id/en"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="@string/en"/>
+            android:text="@string/en"
+            android:textAllCaps="false"/>
     </LinearLayout>
 
 </RelativeLayout>
