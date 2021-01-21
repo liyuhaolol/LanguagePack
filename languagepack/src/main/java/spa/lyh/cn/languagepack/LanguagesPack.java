@@ -4,13 +4,17 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.text.TextUtils;
 import android.util.Log;
 
 
 import com.hjq.language.MultiLanguages;
 
 
+import java.util.List;
 import java.util.Locale;
+
+import spa.lyh.cn.languagepack.model.LanguageInfo;
 
 public class LanguagesPack {
     /**
@@ -35,6 +39,19 @@ public class LanguagesPack {
     }
 
     /**
+     * 将 App 语种设置为系统语种
+     */
+    public static boolean setSystemLanguage(Context context) {
+        Locale oldLocale = getAppLanguage(context);
+        boolean result = MultiLanguages.setSystemLanguage(context);
+        Locale newLocale = getAppLanguage(context);
+        if (result || !equalsLanguage(oldLocale,newLocale)){
+            sendLanguageBroadcast(context);
+        }
+        return result;
+    }
+
+    /**
      * 设置 App 的语种
      */
     public static boolean setAppLanguage(Context context, Locale locale) {
@@ -47,24 +64,33 @@ public class LanguagesPack {
         return result;
     }
 
+    public static boolean setLanguage(Context context, LanguageInfo info){
+        Locale oldLocale,newLocale;
+        boolean result = false;
+        if (TextUtils.isEmpty(info.language)){
+            //语言为空为系统默认语言
+            oldLocale = getAppLanguage(context);
+            result = MultiLanguages.setSystemLanguage(context);
+            newLocale = getAppLanguage(context);
+            if (result || !equalsLanguage(oldLocale,newLocale)){
+                sendLanguageBroadcast(context);
+            }
+        }else {
+            oldLocale = getAppLanguage(context);
+            result = MultiLanguages.setAppLanguage(context,new Locale(info.language,info.country));
+            newLocale = getAppLanguage(context);
+            if (result || !equalsLanguage(oldLocale,newLocale)){
+                sendLanguageBroadcast(context);
+            }
+        }
+        return result;
+    }
+
     /**
      * 获取系统的语种
      */
     public static Locale getSystemLanguage() {
         return MultiLanguages.getSystemLanguage();
-    }
-
-    /**
-     * 将 App 语种设置为系统语种
-     */
-    public static boolean setSystemLanguage(Context context) {
-        Locale oldLocale = getAppLanguage(context);
-        boolean result = MultiLanguages.setSystemLanguage(context);
-        Locale newLocale = getAppLanguage(context);
-        if (result || !equalsLanguage(oldLocale,newLocale)){
-            sendLanguageBroadcast(context);
-        }
-        return result;
     }
 
     /**
@@ -124,6 +150,19 @@ public class LanguagesPack {
         Intent intent=new Intent();
         intent.setAction(context.getPackageName());
         context.sendBroadcast(intent);
+    }
+
+    public static List<LanguageInfo> getLanguageList(Context context){
+        return XmlControler.getLanguageList(context);
+    }
+
+    public static LanguageInfo getSystemLanguageInfo(String content){
+        LanguageInfo info = new LanguageInfo();
+        info.name = "system";
+        info.language = "";
+        info.country = "";
+        info.content = content;
+        return info;
     }
 
 }
