@@ -1,4 +1,8 @@
 <languages>
     <item name="simplified_chinese" language="zh" country="CN">中文(简体)</item>
+    <item name="traditional_chinese" language="zh" country="TW">中文(繁體)</item>
     <item name="english" language="en">English</item>
+    <item name="russian" language="ru">русский язык</item>
+    <item name="japanese" language="ja">日本語</item>
+    <item name="korean" language="ko">한국어.</item>
 </languages>

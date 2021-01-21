@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Международная модель</string>
+	<string name="enter">Введите пример локализации</string>
+	<string name="follow">Следуйте системе</string>
+</resources>

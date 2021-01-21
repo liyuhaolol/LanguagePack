@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">국제 모델</string>
+	<string name="enter">현지화 예제를 입력하십시오</string>
+	<string name="follow">시스템을 따르십시오</string>
+</resources>

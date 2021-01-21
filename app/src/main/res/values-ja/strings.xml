@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">国際モデル</string>
+	<string name="enter">ローカライズ例を入力してください</string>
+	<string name="follow">システムに従ってください</string>
+</resources>

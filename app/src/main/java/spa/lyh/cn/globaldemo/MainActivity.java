@@ -40,7 +40,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     private void loadData(){
         actionBar.setTitle(LanguagesPack.getString(this,R.string.app_name));
-        lan_icon.setBackground(ResourcesCompat.getDrawable(LanguagesPack.getResources(this), R.drawable.lan_icon,null));
+        lan_icon.setBackground(ResourcesCompat.getDrawable(LanguagesPack.getResources(this), R.drawable.flag,null));
         local_click.setText(LanguagesPack.getString(this,R.string.enter));
     }
 

@@ -45,7 +45,7 @@ public class LanguagesPack {
         Locale oldLocale = getAppLanguage(context);
         boolean result = MultiLanguages.setSystemLanguage(context);
         Locale newLocale = getAppLanguage(context);
-        if (result || !equalsLanguage(oldLocale,newLocale)){
+        if (result || !isSame(oldLocale,newLocale)){
             sendLanguageBroadcast(context);
         }
         return result;
@@ -58,7 +58,7 @@ public class LanguagesPack {
         Locale oldLocale = getAppLanguage(context);
         boolean result = MultiLanguages.setAppLanguage(context,locale);
         Locale newLocale = getAppLanguage(context);
-        if (result || !equalsLanguage(oldLocale,newLocale)){
+        if (result || !isSame(oldLocale,newLocale)){
             sendLanguageBroadcast(context);
         }
         return result;
@@ -72,14 +72,14 @@ public class LanguagesPack {
             oldLocale = getAppLanguage(context);
             result = MultiLanguages.setSystemLanguage(context);
             newLocale = getAppLanguage(context);
-            if (result || !equalsLanguage(oldLocale,newLocale)){
+            if (result || !isSame(oldLocale,newLocale)){
                 sendLanguageBroadcast(context);
             }
         }else {
             oldLocale = getAppLanguage(context);
             result = MultiLanguages.setAppLanguage(context,new Locale(info.language,info.country));
             newLocale = getAppLanguage(context);
-            if (result || !equalsLanguage(oldLocale,newLocale)){
+            if (result || !isSame(oldLocale,newLocale)){
                 sendLanguageBroadcast(context);
             }
         }
@@ -105,6 +105,17 @@ public class LanguagesPack {
      */
     public static boolean equalsCountry(Locale locale1, Locale locale2) {
         return MultiLanguages.equalsCountry(locale1,locale2);
+    }
+    /**
+     * 对比两个语言是否一致
+     */
+    public static boolean isSame(Locale locale1, Locale locale2){
+        if (MultiLanguages.equalsLanguage(locale1,locale2)){
+            //两个语言是一样的，要判断国家地区
+            return MultiLanguages.equalsCountry(locale1,locale2);
+        }else {
+            return false;
+        }
     }
 
     /**
