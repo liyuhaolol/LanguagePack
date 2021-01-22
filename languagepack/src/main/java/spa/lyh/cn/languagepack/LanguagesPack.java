@@ -76,6 +76,9 @@ public class LanguagesPack {
         return result;
     }
 
+    /**
+     * 根据LanguageInfo类动态设置语种
+     */
     public static boolean setLanguage(Context context, LanguageInfo info){
         Locale oldLocale,newLocale;
         boolean result;
@@ -175,10 +178,16 @@ public class LanguagesPack {
         context.sendBroadcast(intent);
     }
 
+    /**
+     *通过assets文件夹下的Locales.xml文件获取对应的语言列表
+     */
     public static List<LanguageInfo> getLanguageList(Context context){
         return XmlControler.getLanguageList(context);
     }
 
+    /**
+     * 生成可以作为系统语言可用的LanguageInfo类
+     */
     public static LanguageInfo getSystemLanguageInfo(String content){
         LanguageInfo info = new LanguageInfo();
         info.name = "system";

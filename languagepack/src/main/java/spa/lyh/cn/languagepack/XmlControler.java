@@ -37,6 +37,9 @@ public class XmlControler {
                             LanguageInfo info = new LanguageInfo();
                             info.name = parser.getAttributeValue(null, "name");
                             info.language = parser.getAttributeValue(null, "language");
+                            if (TextUtils.isEmpty(info.language)){
+                                info.language = "";
+                            }
                             info.country = parser.getAttributeValue(null, "country");
                             if (TextUtils.isEmpty(info.country)){
                                 info.country = "";

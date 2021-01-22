@@ -2,4 +2,5 @@
     <string name="app_name">国际化范例</string>
     <string name="enter">进入本地化范例</string>
     <string name="follow">跟随系统</string>
+    <string name="no_need">不要集成的例子</string>
 </resources>

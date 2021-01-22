@@ -1,19 +1,14 @@
 package spa.lyh.cn.globaldemo.local;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 import spa.lyh.cn.globaldemo.BaseActivity;
 import spa.lyh.cn.globaldemo.DemoAdapter;
@@ -32,19 +27,18 @@ public class LocalActivity extends BaseActivity implements LanguageReceiver.Mess
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_local);
         initView();
-        loadData();
     }
 
     private void initView(){
         recy = findViewById(R.id.recy);
         recy.setLayoutManager(new LinearLayoutManager(this));
-        list = new ArrayList<>();
+        list = LanguagesPack.getLanguageList(this);
+        list.add(0,LanguagesPack.getSystemLanguageInfo(getString(R.string.follow)));
         adapter = new DemoAdapter(this,list);
         recy.setAdapter(adapter);
         receiver = new LanguageReceiver(this);
         LanguageReceiver.register(this,receiver);
-        LanguagesPack.getLanguageList(this);
-        insertData();
+        actionBar.setTitle(LanguagesPack.getString(this,R.string.app_name));
         adapter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -57,12 +51,6 @@ public class LocalActivity extends BaseActivity implements LanguageReceiver.Mess
         actionBar.setTitle(LanguagesPack.getString(this,R.string.app_name));
         list.get(0).content = LanguagesPack.getString(this,R.string.follow);
         adapter.notifyDataSetChanged();
-    }
-
-    private void insertData(){
-        list.addAll(LanguagesPack.getLanguageList(this));
-        list.add(0,LanguagesPack.getSystemLanguageInfo(getString(R.string.follow)));
-
     }
 
     @Override
