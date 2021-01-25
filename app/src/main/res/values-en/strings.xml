@@ -3,4 +3,6 @@
 	<string name="app_name">GlobalDemo</string>
 	<string name="enter">Enter the localization example</string>
 	<string name="follow">Follow the system</string>
+	<string name="no_need">No complex integration example</string>
+	<string name="hello_world">Hello World!</string>
 </resources>

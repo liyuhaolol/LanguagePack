@@ -1,4 +1,4 @@
-package spa.lyh.cn.globaldemo.local;
+package spa.lyh.cn.globaldemo;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,9 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import spa.lyh.cn.globaldemo.BaseActivity;
-import spa.lyh.cn.globaldemo.DemoAdapter;
-import spa.lyh.cn.globaldemo.R;
 import spa.lyh.cn.languagepack.LanguageReceiver;
 import spa.lyh.cn.languagepack.LanguagesPack;
 import spa.lyh.cn.languagepack.model.LanguageInfo;

@@ -3,4 +3,6 @@
 	<string name="app_name">Международная модель</string>
 	<string name="enter">Введите пример локализации</string>
 	<string name="follow">Следуйте системе</string>
+	<string name="no_need">Пример без сложной интеграции </string>
+	<string name="hello_world">Здравствуй, мир!</string>
 </resources>

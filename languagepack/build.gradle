@@ -1,5 +1,7 @@
 plugins {
     id 'com.android.library'
+    id 'com.github.dcendents.android-maven'
+    id 'com.jfrog.bintray'
 }
 
 android {
@@ -7,10 +9,10 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        minSdkVersion 23
+        minSdkVersion 14
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0.0"
+        versionCode versions.versionCode
+        versionName versions.versionName
 
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -32,4 +34,76 @@ dependencies {
     //implementation 'androidx.appcompat:appcompat:1.2.0'
     //implementation 'com.google.android.material:material:1.2.1'
     //implementation 'com.hjq:language:5.0'
+}
+
+
+def siteUrl = 'https://github.com/liyuhaolol/GlobalDemo'
+
+def gitUrl = 'https://github.com/liyuhaolol/GlobalDemo.git'
+
+def libName = 'languagepack'
+
+group = "spa.lyh.cn"
+
+version = versions.versionName
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+artifacts {
+    //archives javadocJar
+    archives sourcesJar
+}
+
+install{
+    repositories.mavenInstaller{
+// This generates POM.xml with proper parameters
+        pom{
+            project{
+                packaging 'aar'
+                name 'Nice'
+                url siteUrl
+                licenses{
+                    license{
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers{
+                    developer{
+                        id 'liyuhao'
+                        name 'liyuhao'
+                        email 'liyuhaoid@sina.com'
+                    }
+                }
+                scm{
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+
+bintray{
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    configurations = ['archives']
+    pkg {
+        repo = 'maven'
+        //userOrg = 'lehaha'
+        name = libName
+        desc = 'Nice'
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        publish = true
+    }
 }

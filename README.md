@@ -6,8 +6,7 @@
 
 - 在gradle中:
 ```gradle
-还没传上去呢，这就占个位置，等等改
-    implementation 'spa.lyh.cn:lib_utils:1.1.6'
+    implementation 'spa.lyh.cn:languagepack:1.0.0'
 ```
 
 ## 具体暴露的方法请去看LanguagePack类，有具体注解

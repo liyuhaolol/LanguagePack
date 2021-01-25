@@ -13,7 +13,6 @@ import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
-import spa.lyh.cn.globaldemo.local.LocalActivity;
 import spa.lyh.cn.languagepack.LanguageReceiver;
 import spa.lyh.cn.languagepack.LanguagesPack;
 
@@ -64,7 +63,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, Lang
                 startActivity(intent);
                 break;
             case R.id.no_need:
-                intent = new Intent(getActivity(), LocalActivity.class);
+                intent = new Intent(getActivity(), NoNeedActivity.class);
                 startActivity(intent);
                 break;
         }

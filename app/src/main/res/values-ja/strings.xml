@@ -3,4 +3,6 @@
 	<string name="app_name">国際モデル</string>
 	<string name="enter">ローカライズ例を入力してください</string>
 	<string name="follow">システムに従ってください</string>
+	<string name="no_need">複雑な集積のない例示</string>
+	<string name="hello_world">こんにちは、世界！</string>
 </resources>
