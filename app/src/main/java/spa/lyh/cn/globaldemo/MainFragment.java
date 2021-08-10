@@ -55,7 +55,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, Lang
         lan_icon.setBackground(ResourcesCompat.getDrawable(LanguagesPack.getResources(getActivity()), R.drawable.flag,null));
         local_click.setText(LanguagesPack.getString(getActivity(),R.string.enter));
         no_need.setText(LanguagesPack.getString(getActivity(),R.string.no_need));
-        moudle.setText(LanguagesPack.getString(getActivity(),R.string.no_need));
+        moudle.setText(LanguagesPack.getString(getActivity(),R.string.moudle));
     }
 
     @Override
