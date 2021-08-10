@@ -1,6 +1,5 @@
 plugins {
     id 'com.android.library'
-    id 'com.github.dcendents.android-maven'
 }
 
 android {
@@ -10,8 +9,6 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 30
-        versionCode versions.versionCode
-        versionName versions.versionName
 
         consumerProguardFiles "consumer-rules.pro"
     }
