@@ -5,4 +5,5 @@
 	<string name="follow">Следуйте системе</string>
 	<string name="no_need">Пример без сложной интеграции </string>
 	<string name="hello_world">Здравствуй, мир!</string>
+	<string name="moudle">Пример модуля</string>
 </resources>
