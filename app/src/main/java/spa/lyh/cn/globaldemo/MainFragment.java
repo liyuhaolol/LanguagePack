@@ -13,12 +13,13 @@ import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
+import spa.lyh.cn.ft_webview.webview.WebViewActivity;
 import spa.lyh.cn.languagepack.LanguageReceiver;
 import spa.lyh.cn.languagepack.LanguagesPack;
 import spa.lyh.cn.moudle.TestActivity;
 
 public class MainFragment extends Fragment implements View.OnClickListener, LanguageReceiver.Message {
-    private Button local_click,no_need,moudle;
+    private Button local_click,no_need,moudle,web;
     private ImageView lan_icon;
     public LanguageReceiver receiver;
 
@@ -37,6 +38,8 @@ public class MainFragment extends Fragment implements View.OnClickListener, Lang
         no_need.setOnClickListener(this);
         moudle = view.findViewById(R.id.moudle);
         moudle.setOnClickListener(this);
+        web = view.findViewById(R.id.web);
+        web.setOnClickListener(this);
         lan_icon = view.findViewById(R.id.local_img);
         receiver = new LanguageReceiver(this);
         LanguageReceiver.register(getActivity(),receiver);
@@ -56,6 +59,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, Lang
         local_click.setText(LanguagesPack.getString(getActivity(),R.string.enter));
         no_need.setText(LanguagesPack.getString(getActivity(),R.string.no_need));
         moudle.setText(LanguagesPack.getString(getActivity(),R.string.moudle));
+        web.setText(LanguagesPack.getString(getActivity(),R.string.web));
     }
 
     @Override
@@ -72,6 +76,12 @@ public class MainFragment extends Fragment implements View.OnClickListener, Lang
                 break;
             case R.id.moudle:
                 intent = new Intent(getActivity(), TestActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.web:
+                intent = new Intent(getActivity(), WebWeb.class);
+                intent.putExtra("url","https://iask.sina.com.cn/b/6324549.html");
+                intent.putExtra("title","测试标题");
                 startActivity(intent);
                 break;
         }

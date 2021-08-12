@@ -2,3 +2,4 @@ include ':languagepack'
 include ':app'
 rootProject.name = "LanguagePack"
 include ':moudle'
+include ':lan'

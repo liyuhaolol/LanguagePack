@@ -6,4 +6,5 @@
 	<string name="no_need">無複雜集成的範例</string>
 	<string name="hello_world">你好世界！</string>
 	<string name="moudle">模塊範例</string>
+	<string name="web">瀏覽器</string>
 </resources>
