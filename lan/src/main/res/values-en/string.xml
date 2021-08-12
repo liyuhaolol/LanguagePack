@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="copy" tools:ignore="ExtraTranslation">Copied to clipboard</string>
+    <string name="no_url" tools:ignore="ExtraTranslation">empty url</string>
+    <string name="wrong_url" tools:ignore="ExtraTranslation">wrong url</string>
+</resources>
