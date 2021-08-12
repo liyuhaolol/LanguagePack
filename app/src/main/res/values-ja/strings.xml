@@ -7,4 +7,5 @@
 	<string name="hello_world">こんにちは、世界！</string>
 	<string name="moudle">モジュールの例</string>
 	<string name="web">ブラウザ</string>
+	<string name="per">権限を申請する</string>
 </resources>

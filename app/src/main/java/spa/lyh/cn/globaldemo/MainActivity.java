@@ -43,4 +43,5 @@ public class MainActivity extends BaseActivity implements LanguageReceiver.Messa
     public void onLanguageChange() {
         loadData();
     }
+
 }

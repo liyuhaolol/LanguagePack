@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<string name="CALENDAR" tools:ignore="ExtraTranslation">日曆</string>
+	<string name="CAMERA" tools:ignore="ExtraTranslation">相機</string>
+	<string name="CONTACTS" tools:ignore="ExtraTranslation">聯繫人</string>
+	<string name="LOCATION" tools:ignore="ExtraTranslation">定位</string>
+	<string name="PHONE_STATE" tools:ignore="ExtraTranslation">手機狀態</string>
+	<string name="RECORD_AUDIO" tools:ignore="ExtraTranslation">錄音</string>
+	<string name="SENSORS" tools:ignore="ExtraTranslation">傳感器</string>
+	<string name="SMS" tools:ignore="ExtraTranslation">短信</string>
+	<string name="STORAGE" tools:ignore="ExtraTranslation">存儲讀寫</string>
+	<string name="cancal" tools:ignore="ExtraTranslation">取消</string>
+	<string name="go_setting" tools:ignore="ExtraTranslation">請點擊"設置"-"權限"-打開所需權限。</string>
+	<string name="help" tools:ignore="ExtraTranslation">幫助</string>
+	<string name="leak" tools:ignore="ExtraTranslation">當前應用缺少必要權限:</string>
+	<string name="setting_name" tools:ignore="ExtraTranslation">設置</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<string name="CALENDAR" tools:ignore="ExtraTranslation">カレンダー</string>
+	<string name="CAMERA" tools:ignore="ExtraTranslation">カメラ</string>
+	<string name="CONTACTS" tools:ignore="ExtraTranslation">連絡窓口</string>
+	<string name="LOCATION" tools:ignore="ExtraTranslation">位置</string>
+	<string name="PHONE_STATE" tools:ignore="ExtraTranslation">電話のステータス</string>
+	<string name="RECORD_AUDIO" tools:ignore="ExtraTranslation">録音</string>
+	<string name="SENSORS" tools:ignore="ExtraTranslation">センサー</string>
+	<string name="SMS" tools:ignore="ExtraTranslation">ショートメッセージ </string>
+	<string name="STORAGE" tools:ignore="ExtraTranslation">ストレージの読み取りと書き込み</string>
+	<string name="cancal" tools:ignore="ExtraTranslation">キャンセル</string>
+	<string name="go_setting" tools:ignore="ExtraTranslation">[設定]-[権限]をクリックして、必要な権限を開いてください。</string>
+	<string name="help" tools:ignore="ExtraTranslation">ヘルプ</string>
+	<string name="leak" tools:ignore="ExtraTranslation">現在のアプリケーションには必要な権限がありません:</string>
+	<string name="setting_name" tools:ignore="ExtraTranslation">設定</string>
+</resources>

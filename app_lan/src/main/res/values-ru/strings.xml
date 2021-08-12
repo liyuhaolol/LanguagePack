@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<string name="CALENDAR" tools:ignore="ExtraTranslation">календарь</string>
+	<string name="CAMERA" tools:ignore="ExtraTranslation">камера</string>
+	<string name="CONTACTS" tools:ignore="ExtraTranslation">Контактное лицо</string>
+	<string name="LOCATION" tools:ignore="ExtraTranslation">позиция</string>
+	<string name="PHONE_STATE" tools:ignore="ExtraTranslation">Статус телефона</string>
+	<string name="RECORD_AUDIO" tools:ignore="ExtraTranslation">запись</string>
+	<string name="SENSORS" tools:ignore="ExtraTranslation">датчик</string>
+	<string name="SMS" tools:ignore="ExtraTranslation">Короткое сообщение</string>
+	<string name="STORAGE" tools:ignore="ExtraTranslation">Чтение и запись хранилища</string>
+	<string name="cancal" tools:ignore="ExtraTranslation">Отмена</string>
+	<string name="go_setting" tools:ignore="ExtraTranslation">Пожалуйста, нажмите «Настройки» - «Разрешения», чтобы открыть необходимые разрешения.</string>
+	<string name="help" tools:ignore="ExtraTranslation">помощь</string>
+	<string name="leak" tools:ignore="ExtraTranslation">У текущего приложения отсутствуют необходимые разрешения:</string>
+	<string name="setting_name" tools:ignore="ExtraTranslation">настраивать</string>
+</resources>

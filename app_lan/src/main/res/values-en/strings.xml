@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<string name="CALENDAR" tools:ignore="ExtraTranslation">calendar</string>
+	<string name="CAMERA" tools:ignore="ExtraTranslation">camera</string>
+	<string name="CONTACTS" tools:ignore="ExtraTranslation">contacts</string>
+	<string name="LOCATION" tools:ignore="ExtraTranslation">location</string>
+	<string name="PHONE_STATE" tools:ignore="ExtraTranslation">phone state</string>
+	<string name="RECORD_AUDIO" tools:ignore="ExtraTranslation">record audio</string>
+	<string name="SENSORS" tools:ignore="ExtraTranslation">sensors</string>
+	<string name="SMS" tools:ignore="ExtraTranslation">sms</string>
+	<string name="STORAGE" tools:ignore="ExtraTranslation">storage</string>
+	<string name="cancal" tools:ignore="ExtraTranslation">cancal</string>
+	<string name="go_setting" tools:ignore="ExtraTranslation">Please click "Settings"-"Permissions"-to open the required permissions.</string>
+	<string name="help" tools:ignore="ExtraTranslation">help</string>
+	<string name="leak" tools:ignore="ExtraTranslation">current application lacks necessary permissions:</string>
+	<string name="setting_name" tools:ignore="ExtraTranslation">setting</string>
+</resources>

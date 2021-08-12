@@ -1,5 +1,6 @@
 package spa.lyh.cn.globaldemo;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,9 +18,10 @@ import spa.lyh.cn.ft_webview.webview.WebViewActivity;
 import spa.lyh.cn.languagepack.LanguageReceiver;
 import spa.lyh.cn.languagepack.LanguagesPack;
 import spa.lyh.cn.moudle.TestActivity;
+import spa.lyh.cn.peractivity.PermissionActivity;
 
 public class MainFragment extends Fragment implements View.OnClickListener, LanguageReceiver.Message {
-    private Button local_click,no_need,moudle,web;
+    private Button local_click,no_need,moudle,web,storage;
     private ImageView lan_icon;
     public LanguageReceiver receiver;
 
@@ -40,6 +42,8 @@ public class MainFragment extends Fragment implements View.OnClickListener, Lang
         moudle.setOnClickListener(this);
         web = view.findViewById(R.id.web);
         web.setOnClickListener(this);
+        storage = view.findViewById(R.id.storage);
+        storage.setOnClickListener(this);
         lan_icon = view.findViewById(R.id.local_img);
         receiver = new LanguageReceiver(this);
         LanguageReceiver.register(getActivity(),receiver);
@@ -60,6 +64,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, Lang
         no_need.setText(LanguagesPack.getString(getActivity(),R.string.no_need));
         moudle.setText(LanguagesPack.getString(getActivity(),R.string.moudle));
         web.setText(LanguagesPack.getString(getActivity(),R.string.web));
+        storage.setText(LanguagesPack.getString(getActivity(),R.string.per));
     }
 
     @Override
@@ -84,6 +89,10 @@ public class MainFragment extends Fragment implements View.OnClickListener, Lang
                 intent.putExtra("title","测试标题");
                 startActivity(intent);
                 break;
+            case R.id.storage:
+                MainActivity activity = (MainActivity) getActivity();
+                activity.askForPermission(PermissionActivity.REQUIRED_ONLY_REQUEST, Manifest.permission.READ_EXTERNAL_STORAGE);
+                break;
         }
     }
 
@@ -91,4 +100,6 @@ public class MainFragment extends Fragment implements View.OnClickListener, Lang
     public void onLanguageChange() {
         loadData();
     }
+
+
 }

@@ -2,17 +2,16 @@ package spa.lyh.cn.globaldemo;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
 
 import spa.lyh.cn.languagepack.LanguageReceiver;
 import spa.lyh.cn.languagepack.LanguagesPack;
+import spa.lyh.cn.peractivity.PermissionActivity;
 
 
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends PermissionActivity {
     public LanguageReceiver receiver;
     public ActionBar actionBar;
 

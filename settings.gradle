@@ -3,3 +3,4 @@ include ':app'
 rootProject.name = "LanguagePack"
 include ':moudle'
 include ':lan'
+include ':app_lan'

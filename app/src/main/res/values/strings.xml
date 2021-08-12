@@ -6,4 +6,5 @@
     <string name="hello_world">你好世界！</string>
     <string name="moudle">模块范例</string>
     <string name="web">浏览器</string>
+    <string name="per">申请权限</string>
 </resources>

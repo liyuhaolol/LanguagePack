@@ -7,4 +7,5 @@
 	<string name="hello_world">Здравствуй, мир!</string>
 	<string name="moudle">Пример модуля</string>
 	<string name="web">браузер</string>
+	<string name="per">Право на подачу заявления</string>
 </resources>

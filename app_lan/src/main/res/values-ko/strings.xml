@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<string name="CALENDAR" tools:ignore="ExtraTranslation">달력</string>
+	<string name="CAMERA" tools:ignore="ExtraTranslation">카메라</string>
+	<string name="CONTACTS" tools:ignore="ExtraTranslation">담당자</string>
+	<string name="LOCATION" tools:ignore="ExtraTranslation">위치</string>
+	<string name="PHONE_STATE" tools:ignore="ExtraTranslation">전화 상태</string>
+	<string name="RECORD_AUDIO" tools:ignore="ExtraTranslation">녹음</string>
+	<string name="SENSORS" tools:ignore="ExtraTranslation">감지기</string>
+	<string name="SMS" tools:ignore="ExtraTranslation">짧은 메시지</string>
+	<string name="STORAGE" tools:ignore="ExtraTranslation">스토리지 읽기 및 쓰기</string>
+	<string name="cancal" tools:ignore="ExtraTranslation">취소</string>
+	<string name="go_setting" tools:ignore="ExtraTranslation">"설정"-"권한"을 클릭하여 필요한 권한을 여십시오.</string>
+	<string name="help" tools:ignore="ExtraTranslation">돕다</string>
+	<string name="leak" tools:ignore="ExtraTranslation">현재 응용 프로그램은 필요한 권한이 부족:</string>
+	<string name="setting_name" tools:ignore="ExtraTranslation">설정</string>
+</resources>

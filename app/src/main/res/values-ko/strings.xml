@@ -7,4 +7,5 @@
 	<string name="hello_world">안녕, 세상!</string>
 	<string name="moudle">모듈 범례</string>
 	<string name="web">브 라 우 저</string>
+	<string name="per">신청 권한</string>
 </resources>
