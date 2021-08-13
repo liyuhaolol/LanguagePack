@@ -1,0 +1,5 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<string name="copy" tools:ignore="ExtraTranslation">클립보드 로 복사</string>
+	<string name="no_url" tools:ignore="ExtraTranslation">웹 링크 가 비어 있 음</string>
+	<string name="wrong_url" tools:ignore="ExtraTranslation">잘못된 웹 링크</string>
+</resources>

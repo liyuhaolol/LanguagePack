@@ -1,0 +1,5 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<string name="copy" tools:ignore="ExtraTranslation">已複製到剪貼板</string>
+	<string name="no_url" tools:ignore="ExtraTranslation">網頁連結為空</string>
+	<string name="wrong_url" tools:ignore="ExtraTranslation">無效網頁連結</string>
+</resources>

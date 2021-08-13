@@ -1,0 +1,5 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<string name="copy" tools:ignore="ExtraTranslation">クリップボードにコピー</string>
+	<string name="no_url" tools:ignore="ExtraTranslation">ウェブリンクが空です</string>
+	<string name="wrong_url" tools:ignore="ExtraTranslation">不正なウェブリンク</string>
+</resources>
