@@ -23,10 +23,7 @@ public class LanguagesPack {
      * 在上下文的子类中重写 attachBaseContext 方法（用于更新 Context 的语种）
      */
     public static Context attach(Context context) {
-        if (!LanguagesUtils.equalsLanguages(context, getAppLanguage(context))) {
-            return LanguagesUtils.updateLanguages(context, getAppLanguage(context));
-        }
-        return context;
+        return LanguagesUtils.updateLanguages(context, getAppLanguage(context));
     }
 
     /**
@@ -39,66 +36,54 @@ public class LanguagesPack {
     /**
      * 将 App 语种设置为系统语种
      */
-    public static boolean setSystemLanguage(Context context) {
+    public static void setSystemLanguage(Context context) {
         Locale oldLocale = getAppLanguage(context);
-        boolean result = false;
         LanguagesSave.clearLanguage(context);
-        if (!LanguagesUtils.equalsLanguages(context, getSystemLanguage())) {
-            LanguagesUtils.updateLanguages(context, getSystemLanguage());
-            result =  true;
-        }
+        LanguagesUtils.updateLanguages(context, getSystemLanguage());
         Locale newLocale = getAppLanguage(context);
-        if (result || !isSame(oldLocale,newLocale)){
+        if (!isSame(oldLocale,newLocale)){
             sendLanguageBroadcast(context);
         }
-        return result;
     }
 
     /**
      * 设置 App 的语种
      */
-    public static boolean setAppLanguage(Context context, Locale locale) {
+    public static void setAppLanguage(Context context, Locale locale) {
         Locale oldLocale = getAppLanguage(context);
-        boolean result = false;
         LanguagesSave.saveAppLanguage(context, locale);
-        if (!LanguagesUtils.equalsLanguages(context, locale)) {
-            // 更新当前和全局上下文的语种
-            LanguagesUtils.updateLanguages(context, locale);
-            if (context != context.getApplicationContext()) {
-                LanguagesUtils.updateLanguages(context.getApplicationContext(), locale);
-            }
-            result =  true;
+        // 更新当前和全局上下文的语种
+        LanguagesUtils.updateLanguages(context, locale);
+        if (context != context.getApplicationContext()) {
+            LanguagesUtils.updateLanguages(context.getApplicationContext(), locale);
         }
         Locale newLocale = getAppLanguage(context);
-        if (result || !isSame(oldLocale,newLocale)){
+        if (!isSame(oldLocale,newLocale)){
             sendLanguageBroadcast(context);
         }
-        return result;
     }
 
     /**
      * 根据LanguageInfo类动态设置语种
      */
-    public static boolean setLanguage(Context context, LanguageInfo info){
+    public static void setLanguage(Context context, LanguageInfo info){
         Locale oldLocale,newLocale;
-        boolean result;
         if (TextUtils.isEmpty(info.language)){
             //语言为空为系统默认语言
             oldLocale = getAppLanguage(context);
-            result = setSystemLanguage(context);
+            setSystemLanguage(context);
             newLocale = getAppLanguage(context);
-            if (result || !isSame(oldLocale,newLocale)){
+            if (!isSame(oldLocale,newLocale)){
                 sendLanguageBroadcast(context);
             }
         }else {
             oldLocale = getAppLanguage(context);
-            result = setAppLanguage(context,new Locale(info.language,info.country));
+            setAppLanguage(context,new Locale(info.language,info.country));
             newLocale = getAppLanguage(context);
-            if (result || !isSame(oldLocale,newLocale)){
+            if (!isSame(oldLocale,newLocale)){
                 sendLanguageBroadcast(context);
             }
         }
-        return result;
     }
 
     /**

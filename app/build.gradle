@@ -35,8 +35,8 @@ dependencies {
     implementation project(':moudle')
     implementation project(':lan')
     implementation project(':app_lan')
-    //implementation project(':languagepack')
-    implementation 'com.github.liyuhaolol:LanguagePack:1.0.0'
-    implementation 'com.github.liyuhaolol:SingleWeb:1.0.9'
+    implementation project(':languagepack')
+    //implementation 'com.github.liyuhaolol:LanguagePack:1.0.0'
+    implementation 'com.github.liyuhaolol:SingleWeb:1.1.1'
     implementation 'com.github.liyuhaolol:Permission:1.0.6'
 }

@@ -12,17 +12,10 @@ import java.util.Locale;
 final class LanguagesUtils {
 
     /**
-     * 判断上下文的语种和某个语种是否相同
+     * 判断判断两个语种是否相同
      */
-    static boolean equalsLanguages(Context context, Locale locale) {
-        Configuration config = context.getResources().getConfiguration();
-
-        // API 版本兼容
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            return config.getLocales().get(0).equals(locale);
-        } else {
-            return config.locale.equals(locale);
-        }
+    static boolean equalsLanguages(Locale previousLocale, Locale currentLocale) {
+        return previousLocale.equals(currentLocale);
     }
 
     /**
