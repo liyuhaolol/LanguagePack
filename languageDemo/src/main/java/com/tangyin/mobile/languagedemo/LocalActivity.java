@@ -1,4 +1,4 @@
-package spa.lyh.cn.globaldemo;
+package com.tangyin.mobile.languagedemo;
 
 import android.os.Bundle;
 import android.view.View;

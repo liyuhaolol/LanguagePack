@@ -6,10 +6,7 @@ import android.os.Bundle;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import spa.lyh.cn.languagepack.LanguageReceiver;
-import spa.lyh.cn.languagepack.LanguagesPack;
-
-public class MainActivity extends BaseActivity implements LanguageReceiver.Message {
+public class MainActivity extends BaseActivity implements LocaleReceiver.Message {
     private FragmentManager fragmentManager;
     private FragmentTransaction transaction;
 
@@ -29,12 +26,12 @@ public class MainActivity extends BaseActivity implements LanguageReceiver.Messa
         main = new MainFragment();
         transaction.add(R.id.fl_main, main);
         transaction.commit();
-        receiver = new LanguageReceiver(this);
-        LanguageReceiver.register(this,receiver);
+        receiver = new LocaleReceiver(this);
+        LocaleReceiver.register(this,receiver);
     }
 
     private void loadData(){
-        actionBar.setTitle(LanguagesPack.getString(this,R.string.app_name));
+        actionBar.setTitle(LanguageUtils.getString(this,R.string.app_name));
     }
 
 

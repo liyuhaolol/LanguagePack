@@ -1,16 +1,14 @@
-package spa.lyh.cn.languagepack;
+package spa.lyh.cn.globaldemo;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.util.Log;
 
-public class LanguageReceiver extends BroadcastReceiver {
-    private Message message;
-    public static final String LAN_ACTION = ".global.languageframework";
+public class LocaleReceiver extends BroadcastReceiver {
+    private LocaleReceiver.Message message;
 
-    public LanguageReceiver(Message message){
+    public LocaleReceiver(LocaleReceiver.Message message){
         this.message = message;
     }
 
@@ -25,13 +23,14 @@ public class LanguageReceiver extends BroadcastReceiver {
         void onLanguageChange();
     }
 
-    public static void register(Context context,LanguageReceiver receiver){
+
+    public static void register(Context context, LocaleReceiver receiver){
         IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(context.getPackageName()+LAN_ACTION);
+        intentFilter.addAction(context.getPackageName()+".global.languageframework");
         context.registerReceiver(receiver, intentFilter);
     }
 
-    public static void unregister(Context context,LanguageReceiver receiver){
+    public static void unregister(Context context,LocaleReceiver receiver){
         if (receiver != null){
             try {
                 context.unregisterReceiver(receiver);

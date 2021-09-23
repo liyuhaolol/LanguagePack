@@ -159,7 +159,7 @@ public class LanguagesPack {
      */
     public static void sendLanguageBroadcast(Context context){
         Intent intent=new Intent();
-        intent.setAction(context.getPackageName());
+        intent.setAction(context.getPackageName()+LanguageReceiver.LAN_ACTION);
         context.sendBroadcast(intent);
     }
 

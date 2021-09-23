@@ -14,16 +14,15 @@ import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
-import spa.lyh.cn.ft_webview.webview.WebViewActivity;
-import spa.lyh.cn.languagepack.LanguageReceiver;
-import spa.lyh.cn.languagepack.LanguagesPack;
+import com.tangyin.mobile.languagedemo.LocalActivity;
+
 import spa.lyh.cn.moudle.TestActivity;
 import spa.lyh.cn.peractivity.PermissionActivity;
 
-public class MainFragment extends Fragment implements View.OnClickListener, LanguageReceiver.Message {
+public class MainFragment extends Fragment implements View.OnClickListener, LocaleReceiver.Message {
     private Button local_click,no_need,moudle,web,storage;
     private ImageView lan_icon;
-    public LanguageReceiver receiver;
+    public LocaleReceiver receiver;
 
     @Nullable
     @Override
@@ -45,8 +44,8 @@ public class MainFragment extends Fragment implements View.OnClickListener, Lang
         storage = view.findViewById(R.id.storage);
         storage.setOnClickListener(this);
         lan_icon = view.findViewById(R.id.local_img);
-        receiver = new LanguageReceiver(this);
-        LanguageReceiver.register(getActivity(),receiver);
+        receiver = new LocaleReceiver(this);
+        LocaleReceiver.register(getActivity(),receiver);
         loadData();
     }
 
@@ -54,17 +53,17 @@ public class MainFragment extends Fragment implements View.OnClickListener, Lang
     public void onDestroy() {
         super.onDestroy();
         if (receiver != null){
-            LanguageReceiver.unregister(getActivity(),receiver);
+            LocaleReceiver.unregister(getActivity(),receiver);
         }
     }
 
     private void loadData(){
-        lan_icon.setBackground(ResourcesCompat.getDrawable(LanguagesPack.getResources(getActivity()), R.drawable.flag,null));
-        local_click.setText(LanguagesPack.getString(getActivity(),R.string.enter));
-        no_need.setText(LanguagesPack.getString(getActivity(),R.string.no_need));
-        moudle.setText(LanguagesPack.getString(getActivity(),R.string.moudle));
-        web.setText(LanguagesPack.getString(getActivity(),R.string.web));
-        storage.setText(LanguagesPack.getString(getActivity(),R.string.per));
+        lan_icon.setBackground(ResourcesCompat.getDrawable(LanguageUtils.getResources(getActivity()), R.drawable.flag,null));
+        local_click.setText(LanguageUtils.getString(getActivity(),R.string.enter));
+        no_need.setText(LanguageUtils.getString(getActivity(),R.string.no_need));
+        moudle.setText(LanguageUtils.getString(getActivity(),R.string.moudle));
+        web.setText(LanguageUtils.getString(getActivity(),R.string.web));
+        storage.setText(LanguageUtils.getString(getActivity(),R.string.per));
     }
 
     @Override

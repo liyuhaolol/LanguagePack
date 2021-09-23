@@ -19,8 +19,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".LocalActivity"/>
         <activity android:name=".NoNeedActivity"/>
         <activity android:name=".WebWeb"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
