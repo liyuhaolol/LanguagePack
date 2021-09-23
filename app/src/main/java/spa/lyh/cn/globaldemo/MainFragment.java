@@ -14,8 +14,6 @@ import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
-import com.tangyin.mobile.languagedemo.LocalActivity;
-
 import spa.lyh.cn.moudle.TestActivity;
 import spa.lyh.cn.peractivity.PermissionActivity;
 
@@ -71,8 +69,10 @@ public class MainFragment extends Fragment implements View.OnClickListener, Loca
         Intent intent;
         switch (v.getId()){
             case R.id.local_click:
-                intent = new Intent(getActivity(), LocalActivity.class);
-                startActivity(intent);
+                try {
+                    intent = new Intent(getActivity(), Class.forName("com.tangyin.mobile.languagedemo.LocalActivity"));
+                    startActivity(intent);
+                }catch (Exception e){}
                 break;
             case R.id.no_need:
                 intent = new Intent(getActivity(), NoNeedActivity.class);
