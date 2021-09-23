@@ -2,11 +2,11 @@
 
 ## 实现方法为修改语言后，广播通知到具体界面实现语言切换逻辑。
 
-## 1.0.2更新
+## 1.0.3更新
 
 - 修改广播名称，避免出现错误接收，demo改为解耦模式
 
-## 1.0.1更新
+## 1.0.2更新
 
 - 修复一个因为比对语言造成项目不能正常切换语言的问题
 
@@ -14,7 +14,7 @@
 
 - 在gradle中:
 ```gradle
-    implementation 'spa.lyh.cn:languagepack:1.0.2'
+    implementation 'spa.lyh.cn:languagepack:1.0.3'
 ```
 
 ## 具体暴露的方法请去看LanguagePack类，有具体注解
