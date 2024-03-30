@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.util.Log;
+import android.os.Build;
 
 public class LanguageReceiver extends BroadcastReceiver {
     private Message message;
@@ -28,14 +28,18 @@ public class LanguageReceiver extends BroadcastReceiver {
     public static void register(Context context,LanguageReceiver receiver){
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(context.getPackageName()+LAN_ACTION);
-        context.registerReceiver(receiver, intentFilter);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            context.registerReceiver(receiver, intentFilter,Context.RECEIVER_NOT_EXPORTED);
+        }else {
+            context.registerReceiver(receiver, intentFilter);
+        }
     }
 
     public static void unregister(Context context,LanguageReceiver receiver){
         if (receiver != null){
             try {
                 context.unregisterReceiver(receiver);
-            }catch (IllegalArgumentException e){
+            }catch (IllegalArgumentException ignored){
             }
         }
     }

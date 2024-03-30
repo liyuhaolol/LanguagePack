@@ -2,6 +2,10 @@
 
 ## 实现方法为修改语言后，广播通知到具体界面实现语言切换逻辑。
 
+## 1.0.4更新
+
+- 适配Android14的广播权限，库迁移到mavencentral
+
 ## 1.0.3更新
 
 - 修改广播名称，避免出现错误接收，demo改为解耦模式
@@ -14,7 +18,7 @@
 
 - 在gradle中:
 ```gradle
-    implementation 'spa.lyh.cn:languagepack:1.0.3'
+    implementation 'io.github.liyuhaolol:LanguagePack:1.0.4'
 ```
 
 ## 具体暴露的方法请去看LanguagePack类，有具体注解

@@ -3,6 +3,7 @@ plugins {
 }
 
 android {
+    namespace 'com.tangyin.mobile.languagedemo'
     compileSdk 31
 
     defaultConfig {
